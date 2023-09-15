@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-    QFontDatabase::addApplicationFont(":/rc/siddhanta-calcutta.ttf");
+    QFontDatabase::addApplicationFont(":/rc/siddhanta.ttf");
 
     Config config;
 
