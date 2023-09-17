@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>rc/default.css</file>
+        <file>rc/siddhanta-calcutta.css</file>
         <file>rc/magnifying_glass.png</file>
         <file>rc/map.html</file>
         <file>rc/siddhanta-calcutta.ttf</file>
@@ -9,5 +9,7 @@
         <file>rc/qt_ru.qm</file>
         <file>rc/sandic_ru.qm</file>
         <file>rc/home.png</file>
+        <file>rc/siddhanta.ttf</file>
+        <file>rc/siddhanta.css</file>
     </qresource>
 </RCC>

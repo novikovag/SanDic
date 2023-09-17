@@ -3,40 +3,38 @@
 
 #include <QtSql>
 #include <QtWidgets>
+#include <QRegularExpression>
 
 #include "config.h"
 
 struct AbbItem
 {
-    AbbItem(QString abb, QString desc)
-        : rx(QRegExp("(^|\\W)(" + QRegExp::escape(abb) + ")(\\W|$)")),
-          desc(desc.replace("'", "′")) { }
-
-    QRegExp rx;
-    QString desc;
+  AbbItem(QString abb, QString desc)
+      : rx(QRegularExpression("(^|\\W)(" + QRegularExpression::escape(abb) + ")(\\W|$)")),
+        desc(desc.replace("'", "′")) {}
+  QRegularExpression rx;
+  QString desc;
 };
 
 class Card : public QTextEdit
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    Card(Card*);
-    Card(Config*, QSqlDatabase*);
+  Card(Card*);
+  Card(Config*, QSqlDatabase*);
 
 public slots:
-    void article(QString, QString = "");
+  void article(QString, QString = "");
 
 private:
-    void resizeEvent(QResizeEvent*);
+  void resizeEvent(QResizeEvent*);
+  QString buildRec(QString, QList<QStringList>);
+  QString buildList(QStringList);
 
-    QString buildRec(QString, QList<QStringList>);
-    QString buildList(QStringList);
-
-    QSqlDatabase* db;
-    Config*		  config;
-
-    QMap<QString, QList<AbbItem>> abbs;
+  Config* config;
+  QSqlDatabase* db;
+  QMap<QString, QList<AbbItem>> abbs;
 };
 
 #endif // CARD_H

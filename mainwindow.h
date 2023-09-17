@@ -15,44 +15,36 @@
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    MainWindow(Config*, QSqlDatabase*);
+  MainWindow(Config*, QSqlDatabase*);
 
 private slots:
-    void showDock();
-    void wordClicked(QString);
-    void changeLang();
-    void order() { orderDialog->exec(); }
-    void about();
-
-    void loadStyle();
-    void setStyle();
+  void showDock();
+  void wordClicked(QString);
+  void changeLang();
+  void order() { orderDialog->exec(); }
+  void about();
+  void loadStyle();
+  void setStyle();
 
 private:
-    void addDock(QWidget*, QAction*, QString, Qt::DockWidgetArea = Qt::BottomDockWidgetArea);
+  void addDock(QWidget*, QAction*, QString, Qt::DockWidgetArea = Qt::BottomDockWidgetArea);
+  void closeEvent(QCloseEvent*);
+  bool eventFilter(QObject*, QEvent*);
+  QAction* styleAction(QString);
 
-    void closeEvent(QCloseEvent*);
-
-    bool eventFilter(QObject*, QEvent*);
-
-    QAction* styleAction(QString);
-
-    QHash<QString, QAction*> docks;
-
-    QSqlDatabase* db;
-    Config*       config;
-
-    Card* 		  mainCard;
-    OrderDialog*  orderDialog;
-
-    QTextEdit*	  abbs;
-    QTextEdit*    transMap;
-    QStringList	  html; // [0] abbs [1] map
-
-    QActionGroup* stylesGroup;
-    QMenu*		  stylesMenu;
+  QHash<QString, QAction*> docks;
+  Config* config;
+  QSqlDatabase* db;
+  Card* mainCard;
+  OrderDialog* orderDialog;
+  QTextEdit* abbs;
+  QTextEdit* transMap;
+  QStringList html; // [0] abbs [1] map
+  QActionGroup* stylesGroup;
+  QMenu* stylesMenu;
 };
 
 #endif // MAINWINDOW_H

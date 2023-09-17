@@ -4,34 +4,31 @@
 #include <QtWidgets>
 
 #define ORGNAME  "NovikovAG"
-
 #define PROGNAME "SanDic"
-#define VERSION  "2.5"
-
+#define VERSION  "2.6"
 #define DBNAME   "sandic.db"
 
 class Config : public QSettings
 {
 public:
-    Config();
-   ~Config();
+  Config();
+ ~Config();
 
-    QString				    lang;
-    QMap<QString, QString>  langs;
+  QString lang;
+  QMap<QString, QString> langs;
 
-    QString					style;
-    QMap<QString, QVariant> styles;
+  QString style;
+  QMap<QString, QVariant> styles;
 
-    QStringList				originKeys;
-    QString					originSuff;
-    QMap<QString, QVariant> order;
+  QStringList originKeys;
+  QString originSuff;
+  QMap<QString, QVariant> order;
 
-    QByteArray  mainWindowGeometry;
-    QByteArray  mainWindowState;
+  QByteArray mainWindowGeometry;
+  QByteArray mainWindowState;
 
-    QSize	 	cardSize;
-
-    QString readFile(QString);
+  QSize cardSize;
+  QString readFile(QString);
 };
 
 #endif // CONFIG_H

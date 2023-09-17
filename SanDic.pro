@@ -4,36 +4,34 @@ TARGET = sandic
 TEMPLATE = app
 
 SOURCES += main.cpp \
-    #../../../Tools/Qt/5.12.6/Src/qtbase/src/3rdparty/sqlite/sqlite3.c \
-    mainwindow.cpp \
-    card.cpp \
-    config.cpp \
-    mainwidget.cpp \
-    trans.cpp \
-    orderdialog.cpp
+  mainwindow.cpp \
+  card.cpp \
+  config.cpp \
+  mainwidget.cpp \
+  trans.cpp \
+  orderdialog.cpp
 
 HEADERS  += \
-    #../../../Tools/Qt/5.12.6/Src/qtbase/src/3rdparty/sqlite/sqlite3.h \
-    mainwindow.h \
-    card.h \
-    config.h \
-    mainwidget.h \
-    trans.h \
-    orderdialog.h
+  mainwindow.h \
+  card.h \
+  config.h \
+  mainwidget.h \
+  trans.h \
+  orderdialog.h
 
 FORMS += \
-    mainwidget.ui \
-    orderdialog.ui
+  mainwidget.ui \
+  orderdialog.ui
 
 RESOURCES += \
-    sandic.qrc
+  sandic.qrc
 
 RC_FILE = rc/sandic.rc
 
 # Для Мака, на данный момент не нужно
 # CONFIG -= app_bundle
 
-CONFIG += c++11
+CONFIG += c++20
 
-DEFINES += QT_DEPRECATED_WARNINGS
+#DEFINES += QT_DEPRECATED_WARNINGS
 

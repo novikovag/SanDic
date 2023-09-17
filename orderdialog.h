@@ -5,24 +5,22 @@
 #include <QtWidgets>
 
 #include "config.h"
-
 #include "ui_orderdialog.h"
 
 class OrderDialog : public QDialog, private Ui::OrderDialog
 {
-    Q_OBJECT
-    
+  Q_OBJECT
+  
 public:
-    OrderDialog(Config*, QSqlDatabase*);
+  OrderDialog(Config*, QSqlDatabase*);
 
 private:
-    void closeEvent(QCloseEvent*);
+  void closeEvent(QCloseEvent*);
+  void addItem(QString, bool = true);
+  void setOrigins();
 
-    void addItem(QString, bool = true);
-    void setOrigins();
-
-    QSqlDatabase* db;
-    Config* 	  config;
+  Config* config;
+  QSqlDatabase* db;
 };
 
 #endif // ORDERDIALOG_H
