@@ -33,7 +33,8 @@ qmake -o Makefile SanDic.pro
 make
 make clean
 mv sandic.app /Applications
-cd db; unzip sandic.db.zip; unzip yukta.db.zip
+cd db
+unzip sandic.db.zip
 ```
 
 ## How to build on Ubuntu Linux
@@ -52,6 +53,5 @@ make
 make clean
 mkdir ~/SanDic
 cp sandic ~/SanDic/sandic
-sudo unzip ./db/sandic.db.zip -d ~/SanDic
-sudo unzip ./db/yukta.db.zip -d ~/SanDic
+unzip ./db/sandic.db.zip -d ~/SanDic
 ```
