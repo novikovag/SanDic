@@ -46,6 +46,8 @@ sudo mv ~/.config/qtchooser/qt6.conf /usr/share/qtchooser/qt6.conf
 sudo mkdir -p /usr/lib/$(uname -p)-linux-gnu/qt-default/qtchooser
 sudo ln -n /usr/share/qtchooser/qt6.conf /usr/lib/$(uname -p)-linux-gnu/qt-default/qtchooser/default.conf
 
+mkdir build
+cd build
 git clone https://github.com/novikovag/SanDic.git
 cd SanDic
 qmake -o Makefile SanDic.pro
