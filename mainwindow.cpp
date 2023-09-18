@@ -257,11 +257,8 @@ void MainWindow::about()
                    "Built on %4 at %5<br>"
                    "Devanagari font: <a href='http://svayambhava.blogspot.com/p/"
                    "siddhanta-devanagariunicode-open-type.html'>Siddhanta</a><br>"
-                   "Project page: "
-                       "<a href='https://github.com/novikovag/sandic'>"
-                       "https://github.com/novikovag/sandic</a><br>"
-                   "License: <a href='http://www.gnu.org/licenses/gpl.html'>"
-                       "GNU GPL v3</a>").arg(PROGNAME, VERSION, QT_VERSION_STR, __DATE__, __TIME__);
+                   "Project page: <a href='https://github.com/novikovag/sandic'>SanDic</a><br>"
+                   "License: <a href='http://www.gnu.org/licenses/gpl.html'>GNU GPL v3</a>").arg(PROGNAME, VERSION, QT_VERSION_STR, __DATE__, __TIME__);
 
   QSqlQuery query("SELECT author, desc, uri, words, "
                   "(SELECT words FROM dictStats WHERE origin = '-') "
