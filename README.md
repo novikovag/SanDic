@@ -1,7 +1,7 @@
 ## Sanskrit-English Dictionary v2.7
 
 - Qt v6+ only (tested on Qt v6.5.2).
-- Two embeded ![Devanagary fonsts](href='http://svayambhava.blogspot.com/p/) - Siddhanta and Siddhanta-Calcutta.
+- Two embeded Devanagary fonts - Siddhanta and Siddhanta-Calcutta.
 - Supprot user defined widget styles.
 
 Electronic version based on:
@@ -19,7 +19,7 @@ http://sourceforge.net/p/dhatu-patha
 Monier Williams
 Sanskrit-English Dictionary
 
-![Alt text](/misc/imgs/1.jpg?raw=true "Screen1")
+![Alt text](/misc/imgs/1.png?raw=true "Screen1")
 
 ## How to build on MacOS
 
