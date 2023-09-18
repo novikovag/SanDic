@@ -19,7 +19,7 @@ http://sourceforge.net/p/dhatu-patha
 Monier Williams
 Sanskrit-English Dictionary
 
-![Alt text](/misc/imgs/1.png?raw=true "Screen1")
+![Alt text](/imgs/1.png?raw=true "Screen1")
 
 ## How to build on MacOS
 
