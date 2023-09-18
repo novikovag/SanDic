@@ -30,8 +30,5 @@ RC_FILE = rc/sandic.rc
 
 # Для Мака, на данный момент не нужно
 # CONFIG -= app_bundle
-
 CONFIG += c++20
-
-#DEFINES += QT_DEPRECATED_WARNINGS
 

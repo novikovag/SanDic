@@ -1,4 +1,8 @@
-## Sanskrit-English Dictionary
+## Sanskrit-English Dictionary v2.7
+
+- Qt v6+ only (tested on Qt v6.5.2).
+- Two embeded [Devanagary fonsts](href='http://svayambhava.blogspot.com/p/) - Siddhanta and Siddhanta-Calcutta.
+- Supprot user defined widget styles.
 
 Electronic version based on:
 
@@ -15,12 +19,7 @@ http://sourceforge.net/p/dhatu-patha
 Monier Williams
 Sanskrit-English Dictionary
 
-N.B.
-SanDic executable file and extracted database file (sandic.db) must be in the same directory.
-
 ![Alt text](/misc/imgs/1.jpg?raw=true "Screen1")
-![Alt text](/misc/imgs/2.jpg?raw=true "Screen2")
-![Alt text](/misc/imgs/3.jpg?raw=true "Screen3")
 
 ## How to build on MacOS
 
@@ -57,3 +56,12 @@ mkdir ~/SanDic
 cp sandic ~/SanDic/sandic
 unzip ./db/sandic.db.zip -d ~/SanDic
 ```
+
+* SanDic executable file and extracted database file (sandic.db) must be in the same directory.
+
+## User defined widget styles
+
+* Two styles begin with ':' are predefined.
+* Rename and modify file `SanDic/rc/siddhanta-calcutta.css`. 
+* Select new style `Tools->Styles->Load style...`.
+* Right mouse button delete user style.
