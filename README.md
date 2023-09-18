@@ -58,7 +58,7 @@ cp sandic ~/SanDic/sandic
 unzip ./db/sandic.db.zip -d ~/SanDic
 ```
 
-* SanDic executable file and extracted database file (sandic.db) must be in the same directory.
+* SanDic executable binary file and extracted database file (sandic.db) must be in the same directory.
 
 ## User defined widget styles
 
