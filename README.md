@@ -3,6 +3,7 @@
 - Qt v6+ only (tested on Qt v6.5.2).
 - Two embeded Devanagary fonts - Siddhanta and Siddhanta-Calcutta.
 - Supprot user defined widget styles.
+- Precompiled binaries for [Windows](https://github.com/novikovag/SanDic/releases/download/Windows/sandic-v2.7-win64.zip).
 
 Electronic version based on:
 
@@ -19,7 +20,7 @@ http://sourceforge.net/p/dhatu-patha
 Monier Williams
 Sanskrit-English Dictionary
 
-![Alt text](/misc/1.png?raw=true)
+[Alt text](/misc/1.png?raw=true)
 
 ## How to build on MacOS
 
