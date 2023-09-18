@@ -1,7 +1,7 @@
 ## Sanskrit-English Dictionary v2.7
 
 - Qt v6+ only (tested on Qt v6.5.2).
-- Two embeded [Devanagary fonsts](href='http://svayambhava.blogspot.com/p/) - Siddhanta and Siddhanta-Calcutta.
+- Two embeded ![Devanagary fonsts](href='http://svayambhava.blogspot.com/p/) - Siddhanta and Siddhanta-Calcutta.
 - Supprot user defined widget styles.
 
 Electronic version based on:
