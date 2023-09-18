@@ -257,8 +257,6 @@ void MainWindow::about()
                    "Built on %4 at %5<br>"
                    "Devanagari font: <a href='http://svayambhava.blogspot.com/p/"
                    "siddhanta-devanagariunicode-open-type.html'>Siddhanta</a><br>"
-                   "Author: <a href='mailto:feedback@sandic.ru?subject=%1'>"
-                       "Novikov Artem Gennadievich</a><br>"
                    "Project page: "
                        "<a href='https://github.com/novikovag/sandic'>"
                        "https://github.com/novikovag/sandic</a><br>"

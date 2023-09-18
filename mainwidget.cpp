@@ -41,13 +41,13 @@ MainWidget::MainWidget(Config* config, QSqlDatabase* db)
   connect(indexList->selectionModel(), SIGNAL(currentRowChanged(QModelIndex, QModelIndex)), SLOT(rowChanged(const QModelIndex&, const QModelIndex&)));
   connect(indexList, SIGNAL(doubleClicked(QModelIndex)), SLOT(doubleClicked(QModelIndex)));
   connect(indexList, SIGNAL(clicked(QModelIndex)), SLOT(clicked(QModelIndex)));
-  connect(indexCombo,SIGNAL(editTextChanged(const QString&)), SLOT(editTextChanged(const QString&)));
+  connect(indexCombo, SIGNAL(editTextChanged(const QString&)), SLOT(editTextChanged(const QString&)));
   connect(searchTable->selectionModel(), SIGNAL(currentChanged(QModelIndex, QModelIndex)), SLOT(rowChanged(const QModelIndex&, const QModelIndex&)));
   connect(searchTable, SIGNAL(doubleClicked(QModelIndex)), SLOT(doubleClicked(QModelIndex)));
   connect(searchButton,SIGNAL(clicked()), SLOT(search()));
-  // Поиск по регуляркам пока отключен.
+
   rxCheck->setChecked(false);
-  rxCheck->setVisible(false);
+  rxCheck->setVisible(true);
 }
 
 void MainWidget::rowChanged(const QModelIndex& current, const QModelIndex& previous)
@@ -104,6 +104,12 @@ void MainWidget::search()
   }
 
   QString txt = searchCombo->currentText().trimmed();
+  // Небольшая проверка регулярки.
+  if (rxCheck->isChecked()) {
+    while (txt.startsWith("^*") || txt.startsWith("*")) {
+      txt.remove(0, 1);
+    }
+  }
 
   if (txt.isEmpty()) {
     return;
@@ -111,12 +117,19 @@ void MainWidget::search()
 
   QApplication::setOverrideCursor(Qt::WaitCursor);
 
-  static_cast<QSqlQueryModel*>(searchTable->model())->setQuery(rxCheck->isChecked() ?
-                               QString("SELECT word FROM dictEntries WHERE word REGEXP '%1' UNION "
-                                       "SELECT word FROM dictEntries WHERE desc REGEXP '%1' %2 GROUP BY word ORDER BY word").arg(txt, config->originSuff) :
-                               QString("SELECT DISTINCT(word), quote(word) FROM dictEntries WHERE word MATCH '%1' UNION "
-                                       "SELECT word, snippet(dictEntries, '<strong>', '</strong>', '<em>...</em>', -1, 15) "
-                                       "FROM dictEntries WHERE desc MATCH '%1' %2 ORDER BY word").arg(txt, config->originSuff));
+  static_cast<QSqlQueryModel*>(searchTable->model())
+      ->setQuery(rxCheck->isChecked()
+                     ? QString("SELECT word FROM dictEntries WHERE word REGEXP '%1' UNION "
+                               "SELECT word FROM dictEntries WHERE desc REGEXP '%1' %2 GROUP BY "
+                               "word ORDER BY word")
+                           .arg(txt, config->originSuff)
+                     : QString("SELECT DISTINCT(word), quote(word) FROM dictEntries WHERE word "
+                               "MATCH '%1' UNION "
+                               "SELECT word, snippet(dictEntries, '<strong>', '</strong>', "
+                               "'<em>...</em>', -1, 15) "
+                               "FROM dictEntries WHERE desc MATCH '%1' %2 ORDER BY word")
+                           .arg(txt, config->originSuff));
+
   searchTable->resizeColumnToContents(0);
   QApplication::restoreOverrideCursor();
 

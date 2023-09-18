@@ -5,7 +5,7 @@
 
 #define ORGNAME  "NovikovAG"
 #define PROGNAME "SanDic"
-#define VERSION  "2.6"
+#define VERSION  "2.7"
 #define DBNAME   "sandic.db"
 
 class Config : public QSettings
